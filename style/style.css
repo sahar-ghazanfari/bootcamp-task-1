@@ -1,0 +1,150 @@
+/*Reset*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+/*Root*/
+
+:root {
+  --color-primary: #234894;
+  --color-secondary: #afcedd;
+  --color-button: #219f95;
+  --color-p-light: #696969;
+  --color-white: #fff;
+  --color-black: #000;
+}
+
+/*Current request*/
+
+.Current-request h1 {
+  margin: 1rem 1rem 2rem 0;
+}
+
+.Current-request__card {
+  display: grid;
+  gap: 1rem;
+}
+
+.request-wrapper {
+  display: grid;
+  grid-template-areas:
+    "a b"
+    "c ."
+    "d e";
+  row-gap: 1rem;
+  justify-content: first baseline;
+}
+
+.request-title {
+  grid-area: a;
+}
+
+.request-date {
+  grid-area: b;
+}
+
+.request-ID {
+  grid-area: c;
+}
+
+.request-person {
+  grid-area: d;
+}
+
+.btn {
+  grid-area: e;
+}
+
+.request-wrapper {
+  padding: 1.5rem;
+}
+
+.request-title {
+  display: flex;
+  color: var(--color-primary);
+  gap: 1rem;
+}
+
+.request-title p:first-child {
+  background-color: var(--color-secondary);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.request-title p:last-child,
+.request-date {
+  white-space: nowrap;
+  align-self: center;
+}
+
+.request-date {
+  justify-self: flex-end;
+}
+
+.request-ID {
+  width: max-content;
+}
+
+.request-date,
+.request-ID p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--color-p-light);
+}
+
+.request-ID h2 {
+  font-size: 2.1rem;
+}
+
+.request-person {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.request-person img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+}
+
+.request-person p {
+  align-self: center;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--color-button);
+  color: var(--color-white);
+  padding: 2rem 1rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  white-space: nowrap;
+  width: 15rem;
+  justify-self: flex-end;
+}
+
+@media screen and (min-width: 640px) {
+  .Current-request__card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Current-request__card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
